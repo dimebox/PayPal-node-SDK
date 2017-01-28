@@ -2,7 +2,7 @@
 
 Continuous integration status:
 
-[![Build Status](https://travis-ci.org/paypal/PayPal-node-SDK.svg?branch=master)](https://travis-ci.org/paypal/PayPal-node-SDK) [![Coverage Status](https://coveralls.io/repos/paypal/PayPal-node-SDK/badge.svg?branch=master)](https://coveralls.io/r/paypal/PayPal-node-SDK?branch=master) 
+[![Build Status](https://travis-ci.org/paypal/PayPal-node-SDK.svg?branch=master)](https://travis-ci.org/paypal/PayPal-node-SDK) [![Coverage Status](https://coveralls.io/repos/paypal/PayPal-node-SDK/badge.svg?branch=master)](https://coveralls.io/r/paypal/PayPal-node-SDK?branch=master)
 
 NPM status:
 
@@ -36,12 +36,13 @@ To write an app using the SDK
     var paypal = require('paypal-rest-sdk');
     ```
   * Create config options, with parameters (mode, client_id, secret).
-
+  * to use an HTTPS proxy (like squid proxy) for all your requests supply a proxy_url parameter.
     ```js
     paypal.configure({
       'mode': 'sandbox', //sandbox or live
       'client_id': 'EBWKjlELKMYqRNQ6sYvFo64FtaRLRR5BdHEESmha49TM',
-      'client_secret': 'EO422dn3gQLgDbuwqTjzrFgFtaRLRR5BdHEESmha49TM'
+      'client_secret': 'EO422dn3gQLgDbuwqTjzrFgFtaRLRR5BdHEESmha49TM',
+      'proxy_url': 'http://127.0.0.1:3128' // only set this if you want to use a proxy
     });
     ```
   * For multiple configuration support, have a look at the [sample](/samples/configuration/multiple_config.js)
@@ -166,5 +167,5 @@ NOCK_OFF=true mocha -t 60000
 ## License
 Code released under [SDK LICENSE](LICENSE)  
 
-## Contributions 
- Pull requests and new issues are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for details. 
+## Contributions
+ Pull requests and new issues are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
